@@ -19,3 +19,5 @@ colorama，命令行着色工具
  2.请求接口，得到json数据，但json的格式已经改变了，今天抓取时(2017-02-02)，格式为：r.json()['data'][index]['queryLeftNewDTO']
  
  3.由于12306自身服务器的原因，当出现json EncodeError错误时，可以登录网站，看下能否查询票
+ 
+ 4.https://kyfw.12306.cn/otn/resources/js/framework/station_name.js?station_version=1.8994 
