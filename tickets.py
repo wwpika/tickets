@@ -32,11 +32,12 @@ init()
 class TrainsCollection:
 	header='车次 车站 时间 历时 一等 二等 软卧 硬卧 硬座 无座'.split()
 	def __init__(self,available_trains,options):
-		#available_trains:一个列表，包含可获得的火车班次，每个班次是一个字典
+		#available_trains:一个字典,包含可获得的火车班次
 		#options:查询的选项，如高铁，动车。。。
 		self.available_trains=available_trains
 		self.options=options
 
+	#对时长进行处理
 	def _get_duration(self):
 		duration=self.available_trains.get('lishi').replace(':','小时')+'分'
 		if duration.startswith('00'):
@@ -45,6 +46,7 @@ class TrainsCollection:
 			return duration[1:]
 		return duration
 
+	#属性函数，同时也是一个生成器函数
 	@property
 	def trains(self):
 		
